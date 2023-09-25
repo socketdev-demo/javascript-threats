@@ -2,6 +2,6 @@
     "name": "javascript-threats",
     "version": "1.0.0",
     "dependencies": {
-        "envi-config": "0.1.1"
+        "envi-config": "0.1.0"
     }
 }
