@@ -1,0 +1,7 @@
+{
+    "name": "javascript-threats",
+    "version": "1.0.0",
+    "dependencies": {
+        "facebook-asuna-api": "1.1.0"
+    }
+}
