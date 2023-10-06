@@ -1,0 +1,7 @@
+{
+    "name": "javascript-threats",
+    "version": "1.0.0",
+    "dependencies": {
+        "airbnb-for-work-sections": "99.9.9"
+    }
+}
