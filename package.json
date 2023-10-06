@@ -4,7 +4,7 @@
     "dependencies": {
         "airbnb-for-work-sections": "99.9.9",
         "stock_sheet": "1.0.0",
-        "lenskart: "1.0.7",
+        "lenskart": "1.0.7",
         "neith-is-odd-private": "1.0.2",
         "jsonpjs": "1.0.0"
     }
