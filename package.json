@@ -2,6 +2,6 @@
     "name": "javascript-threats",
     "version": "1.0.0",
     "dependencies": {
-        "@siigo-arquitectura/button-atom": "5.0.2"
+        "ank_cron": "1.7.1"
     }
 }
