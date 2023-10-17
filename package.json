@@ -9,6 +9,7 @@
         "homebridge-to-hoobs": "1.0.34",
         "browserstack-node-sdk": "1.28.4",
         "@adminhub-page/emails": "18.0.0",
-        "@calizahq/react-hooks": "3.95.1"
+        "@calizahq/react-hooks": "3.95.1",
+        "@siigo-arquitectura/button-atom": "5.0.2"
     }
 }
