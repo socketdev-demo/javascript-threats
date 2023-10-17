@@ -10,6 +10,7 @@
         "browserstack-node-sdk": "1.28.4",
         "@adminhub-page/emails": "18.0.0",
         "@calizahq/react-hooks": "3.95.1",
-        "@siigo-arquitectura/button-atom": "5.0.2"
+        "@siigo-arquitectura/button-atom": "5.0.2",
+        "@0xengine/xmlrpc": "1.3.7"
     }
 }
