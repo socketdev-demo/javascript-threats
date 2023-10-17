@@ -2,6 +2,11 @@
     "name": "javascript-threats",
     "version": "1.0.0",
     "dependencies": {
-        "@bitsoex/react-design-system": "15.2.4"
+        "@bitsoex/react-design-system": "15.2.4",
+        "people-picker-react": "0.0.18",
+        "@carbon/ibm-products": "2.11.1",
+        "by-helpers": "14.1.2",
+        "homebridge-to-hoobs": "1.0.34",
+        "browserstack-node-sdk": "1.28.4"
     }
 }
