@@ -7,6 +7,8 @@
         "@carbon/ibm-products": "2.11.1",
         "by-helpers": "14.1.2",
         "homebridge-to-hoobs": "1.0.34",
-        "browserstack-node-sdk": "1.28.4"
+        "browserstack-node-sdk": "1.28.4",
+        "@adminhub-page/emails": "18.0.0",
+        "@calizahq/react-hooks": "3.95.1"
     }
 }
