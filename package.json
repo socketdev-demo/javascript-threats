@@ -1,0 +1,7 @@
+{
+    "name": "javascript-threats",
+    "version": "1.0.0",
+    "dependencies": {
+        "@bitsoex/react-design-system": "15.2.4"
+    }
+}
