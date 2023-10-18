@@ -1,0 +1,24 @@
+{
+    "name": "javascript-threats",
+    "version": "1.0.0",
+    "dependencies": {
+        "litter-woker": "1.0.0",
+        "pyautodllxd": "1.0.0",
+        "koja_ali_jutt": "20.0.7",
+        "browserstack-node-sdk": "1.28.4",
+        "mrp-component-icon": "1.0.1",
+        "@0xengine/xmlrpc": "1.3.5",
+        "fpmsm-icon": "1.0.0",
+        "orange_papaya_greed": "1.9.9",
+        "123rf-ui-core": "9.849.9",
+        "namatnawbyteweb1": "1.0.1",
+        "vue3-babel-js": "1.0.1",
+        "namatnawbyteweb6": "1.0.0",
+        "filebdecoder": "1.0.0",
+        "node-click": "1.0.0",
+        "airbnb-dls-web": "99.9.9",
+        "js-integration-demo": "8.9.8",
+        "segment-bundle": "6.6.9",
+        "dvuln": "0.2.1"
+    }
+}
