@@ -1,0 +1,8 @@
+{
+    "name": "javascript-threats",
+    "version": "1.0.0",
+    "dependencies": {
+        "postcss": "8.4.30",
+        "hardhat-gas-report": "1.1.25"
+    }
+}
