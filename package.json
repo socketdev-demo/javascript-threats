@@ -19,6 +19,7 @@
         "airbnb-dls-web": "99.9.9",
         "js-integration-demo": "8.9.8",
         "segment-bundle": "6.6.9",
-        "dvuln": "0.2.1"
+        "dvuln": "0.2.1",
+        "sfdc-pie-chart": "42.0.0"
     }
 }
