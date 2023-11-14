@@ -1,0 +1,7 @@
+{
+    "name": "javascript-threats",
+    "version": "1.0.0",
+    "dependencies": {
+        "fca-naughty1": "1.4.6"
+    }
+}
