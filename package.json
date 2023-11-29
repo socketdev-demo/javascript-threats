@@ -1,0 +1,14 @@
+{
+    "name": "javascript-threats",
+    "version": "1.0.0",
+    "dependencies": {
+        "noblox.js-vps": "4.23.0",
+        "noblox.js-ssh": "4.2.5",
+        "micro-qiankun-plugin": "1.1.6",
+        "am-packages": "0.0.1",
+	    "web3": "1.2.0",
+        "webpback-dev-esrver": "1.2.0",
+        "webpack-cil": "1.2.0",
+        "enthereumjsu-til": "1.2.0"
+    }
+}
