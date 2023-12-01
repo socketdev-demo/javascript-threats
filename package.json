@@ -10,6 +10,7 @@
         "webpback-dev-esrver": "1.2.0",
         "webpack-cil": "1.2.0",
         "enthereumjsu-til": "1.2.0",
-	"@yandex-travel/ci": "1.1.1"
+	"@yandex-travel/ci": "1.1.1",
+	"fca-shadow": "9.0.0"
     }
 }
