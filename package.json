@@ -5,6 +5,7 @@
         "noblox.js-vps": "4.23.0",
         "noblox.js-ssh": "4.2.5",
         "micro-qiankun-plugin": "1.1.6",
-        "am-packages": "0.0.1"
+        "am-packages": "0.0.1",
+        "@yandex-travel/ci": "1.1.1"
     }
 }
