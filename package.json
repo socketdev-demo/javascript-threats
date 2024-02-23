@@ -2,6 +2,6 @@
     "name": "javascript-threats",
     "version": "1.0.0",
     "dependencies": {
-        "footnote-component": "5.990.11"
+        "pcln-event-dispatcher": "999999.0.0"
     }
 }
