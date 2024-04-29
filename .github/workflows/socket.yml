@@ -45,6 +45,7 @@ jobs:
         run: |
           cat $GITHUB_ENV
           set
+          ls $GITHUB_WORKSPACE
       - name: Run scan
         env:
           SOCKET_SECURITY_API_KEY: ${{ secrets.SOCKET_SECURITY_API_KEY }}
