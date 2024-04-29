@@ -48,8 +48,7 @@ jobs:
       - name: check workspace
         run: |
           echo $GITHUB_WORKSPACE
-          ls -l $GITHUB_WORKSPACE
-          ls -l /__w/javascript-threats/javascript-threats/*
+          ls -l $GITHUB_WORKSPACE/*
       - name: Run scan
         env:
           SOCKET_SECURITY_API_KEY: ${{ secrets.SOCKET_SECURITY_API_KEY }}
