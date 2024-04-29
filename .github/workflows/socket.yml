@@ -42,7 +42,9 @@ jobs:
           echo "PR_NUMBER=${{ fromJson(steps.get_pr_data.outputs.result).number }}"  >> $GITHUB_ENV
           echo 'PR_NAME=${{ fromJson(steps.get_pr_data.outputs.result).title }}' >> $GITHUB_ENV
       - name: dump env
-        run: cat $GITHUB_ENV
+        run: |
+          cat $GITHUB_ENV
+          set
       - name: Run scan
         env:
           SOCKET_SECURITY_API_KEY: ${{ secrets.SOCKET_SECURITY_API_KEY }}
