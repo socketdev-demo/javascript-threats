@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     container: socketdev/cli:0.0.23-github
     steps:
+      - uses: actions/checkout@v2
       - name: default branch
         if: steps.branch-names.outputs.is_default == 'true'
         run: echo "DEFAULT_BRANCH=true" >> $GITHUB_ENV
