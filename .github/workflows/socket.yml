@@ -7,7 +7,7 @@ jobs:
       contents: read
       pull-requests: read
     runs-on: ubuntu-latest
-    container: socketdev/cli:0.0.23-github
+    container: socketdev/cli:0.0.26-github
     steps:
       - uses: actions/checkout@v2
       - name: default branch
@@ -38,18 +38,10 @@ jobs:
               }
               
               return data;
-      - name: Pull Request data
+      - name: Save Pull Request data
         run: |
           echo "PR_NUMBER=${{ fromJson(steps.get_pr_data.outputs.result).number }}"  >> $GITHUB_ENV
           echo 'PR_NAME=${{ fromJson(steps.get_pr_data.outputs.result).title }}' >> $GITHUB_ENV
-      - name: dump env
-        run: |
-          cat $GITHUB_ENV
-          set
-      - name: check workspace
-        run: |
-          echo $GITHUB_WORKSPACE
-          ls -lR $RUNNER_WORKSPACE
       - name: Run scan
         env:
           SOCKET_SECURITY_API_KEY: ${{ secrets.SOCKET_SECURITY_API_KEY }}
