@@ -49,6 +49,7 @@ jobs:
         run: |
           echo $GITHUB_WORKSPACE
           ls -l $GITHUB_WORKSPACE
+          find / -name package.json
       - name: Run scan
         env:
           SOCKET_SECURITY_API_KEY: ${{ secrets.SOCKET_SECURITY_API_KEY }}
