@@ -7,7 +7,7 @@ jobs:
       contents: read
       pull-requests: read
     runs-on: ubuntu-latest
-    container: socketdev/cli:0.0.26-github
+    container: socketdev/cli:0.0.27-github
     steps:
       - uses: actions/checkout@v4
       - name: default branch
