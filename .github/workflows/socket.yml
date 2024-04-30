@@ -9,11 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     container: socketdev/cli:0.0.38-github
     steps:
-      - name: checkout code
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.head_ref || github.ref_name }}
-          fetch-depth: 2
+      - uses: actions/checkout@v4
       - name: default branch
         if: steps.branch-names.outputs.is_default == 'true'
         run: echo "DEFAULT_BRANCH=true" >> $GITHUB_ENV
@@ -46,7 +42,6 @@ jobs:
         run: |
           echo "PR_NUMBER=${{ fromJson(steps.get_pr_data.outputs.result).number }}"  >> $GITHUB_ENV
           echo 'PR_NAME=${{ fromJson(steps.get_pr_data.outputs.result).title }}' >> $GITHUB_ENV
-          echo changed_files=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }})
       - name: Run scan
         env:
           SOCKET_SECURITY_API_KEY: ${{ secrets.SOCKET_SECURITY_API_KEY }}
