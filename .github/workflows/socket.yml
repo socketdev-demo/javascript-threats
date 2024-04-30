@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref || github.ref_name }}
-          fetch-depth: ${{ github.event_name == 'pull_request' && 2 || 0 }}
+          fetch-depth: 2
       - name: default branch
         if: steps.branch-names.outputs.is_default == 'true'
         run: echo "DEFAULT_BRANCH=true" >> $GITHUB_ENV
