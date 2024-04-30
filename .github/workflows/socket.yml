@@ -13,9 +13,9 @@ jobs:
       - name: default branch
         run: |
           echo "DEFAULT_BRANCH=${{ steps.branch-names.outputs.is_default }}" >> $GITHUB_ENV
-          echo "COMMIT_MESSAGE='${{ github.event.head_commit.message || None }}'" >> $GITHUB_ENV
+          echo "COMMIT_MESSAGE=${{ github.event.head_commit.message || '' }}" >> $GITHUB_ENV
           echo "DEFAULT_BRANCH=${{ steps.branch-names.outputs.is_default }}"
-          echo "COMMIT_MESSAGE='${{ github.event.head_commit.message || None }}'"
+          echo "COMMIT_MESSAGE=${{ github.event.head_commit.message || '' }}"
       - uses: actions/github-script@v7
         id: get_pr_data
         with:
