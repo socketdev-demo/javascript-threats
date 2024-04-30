@@ -18,5 +18,8 @@ jobs:
           COMMIT_MESSAGE: ${{ github.event.head_commit.message || '' }}
           DEFAULT_BRANCH: ${{ steps.branch-names.outputs.is_default }}
         run: |
+          echo $PR_NUMBER
+          echo $COMMIT_MESSAGE
+          echo $DEFAULT_BRANCH
           cd /socketcli
           python3 socketcli.py
