@@ -9,7 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     container: socketdev/cli:0.0.38-github
     steps:
-      - uses: actions/checkout@v4
+      - name: checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+          fetch-depth: ${{ github.event_name == 'pull_request' && 2 || 0 }}
       - name: default branch
         if: steps.branch-names.outputs.is_default == 'true'
         run: echo "DEFAULT_BRANCH=true" >> $GITHUB_ENV
