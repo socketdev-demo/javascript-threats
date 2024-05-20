@@ -7,15 +7,15 @@ jobs:
       contents: read
       pull-requests: read
     runs-on: ubuntu-latest
-    container: socketdev/cli:0.0.38-github
+    container: socketdev/cli:0.0.67
     steps:
       - uses: actions/checkout@v4
       - name: default branch
         if: steps.branch-names.outputs.is_default == 'true'
-        run: echo "DEFAULT_BRANCH=true" >> $GITHUB_ENV
+        run: echo "DEFAULT_BRANCH=True" >> $GITHUB_ENV
       - name: not default branch
         if: steps.branch-names.outputs.is_default == 'false'
-        run: echo "DEFAULT_BRANCH=true" >> $GITHUB_ENV
+        run: echo "DEFAULT_BRANCH=False" >> $GITHUB_ENV
       - name: Check if merge
         if: ${{ github.event.pull_request.merged }}
         run: echo "MERGED=true" >> $GITHUB_ENV
@@ -48,5 +48,4 @@ jobs:
           GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
           COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
         run: |
-          cd /socketcli
-          python3 socketcli.py
+          socketcli --scm github --repo ${{ github.event.repository.name }} --branch "${{ github.ref_name }}" --make_default $DEFAULT_BRANCH --pr_number $(if [ -z $PR_NUMBER ]; then echo 0; else echo $PR_NUMBER;fi) --committer "$GITHUB_ACTOR" --commit_message "$COMMIT_MESSAGE" --target_path $GITHUB_WORKSPACE
