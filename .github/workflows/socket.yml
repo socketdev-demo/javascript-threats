@@ -13,8 +13,7 @@ jobs:
       - name: default branch
         if: steps.branch-names.outputs.is_default == 'true'
         run: echo "DEFAULT_BRANCH=1" >> $GITHUB_ENV
-      - name: get pr details
-        id: get-pr
+      - id: get-pr
         with:
           script: |
             const request = {
