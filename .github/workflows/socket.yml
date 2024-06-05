@@ -13,6 +13,11 @@ jobs:
       - name: default branch
         if: steps.branch-names.outputs.is_default == 'true'
         run: echo "DEFAULT_BRANCH=1" >> $GITHUB_ENV
+      - name: alternate pr details
+        run: |
+          PR_URL="${{ github.event.issue.pull_request.url }}"
+          PR_NUM=${PR_URL##*/}
+          echo $PR_URL
       - name: Check if merge
         if: ${{ github.event.pull_request.merged }}
         run: echo "MERGED=true" >> $GITHUB_ENV
