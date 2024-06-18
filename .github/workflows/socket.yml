@@ -25,9 +25,6 @@ jobs:
       - name: Save Pull Request data
         id: comment_pull_request
         run: |
-          echo ${{ github.event.issue.number }}
-      - name: PR 2
-        run: |
           echo PR_NUMBER_TEST=${{ github.event.issue.number }}
       - name: PR 3
         run: |
