@@ -25,7 +25,10 @@ jobs:
       - name: Save Pull Request data
         id: comment_pull_request
         run: |
-          echo PR_NUMBER=${{ github.event.issue.number }} >> $GITHUB_ENV
+          export pr_number=${{ github.event.issue.number }}
+          if [ ! -z $pr_number; then
+            echo PR_NUMBER=${{ github.event.issue.number }} >> $GITHUB_ENV
+          fi
       - uses: actions/github-script@v7
         id: get_pr_data
         if: (steps.comment_pull_request.outputs.PR_NUMBER == '')
