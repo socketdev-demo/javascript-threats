@@ -39,6 +39,12 @@ jobs:
         run: |
           echo "PR_NUMBER=${{ fromJson(steps.get_pr_data.outputs.result).number }}"  >> $GITHUB_ENV
           echo 'PR_NAME=${{ fromJson(steps.get_pr_data.outputs.result).title }}' >> $GITHUB_ENV
+      - name: print body
+        env:
+          BODY: ${{ github.event.comment.body }}
+        run: |
+          echo "$BODY"
+          echo ${{ github.event.comment }}
       - name: Run scan
         env:
           SOCKET_SECURITY_API_KEY: ${{ secrets.SOCKET_SECURITY_API_KEY }}
