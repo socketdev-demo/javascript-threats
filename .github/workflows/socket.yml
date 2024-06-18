@@ -7,9 +7,14 @@ jobs:
       contents: read
       pull-requests: read
     runs-on: ubuntu-latest
-    container: socketdev/cli:0.0.67
+    container: socketdev/cli:latest
     steps:
       - uses: actions/checkout@v4
+      - name: event details
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: |
+          echo "$GITHUB_CONTEXT"
       - name: default branch
         if: steps.branch-names.outputs.is_default == 'true'
         run: echo "DEFAULT_BRANCH=1" >> $GITHUB_ENV
@@ -39,12 +44,6 @@ jobs:
         run: |
           echo "PR_NUMBER=${{ fromJson(steps.get_pr_data.outputs.result).number }}"  >> $GITHUB_ENV
           echo 'PR_NAME=${{ fromJson(steps.get_pr_data.outputs.result).title }}' >> $GITHUB_ENV
-      - name: print body
-        env:
-          BODY: ${{ github.event.comment.body }}
-        run: |
-          echo "$BODY"
-          echo ${{ github.event.comment }}
       - name: Run scan
         env:
           SOCKET_SECURITY_API_KEY: ${{ secrets.SOCKET_SECURITY_API_KEY }}
