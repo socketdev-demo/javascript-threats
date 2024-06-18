@@ -22,16 +22,8 @@ jobs:
       - name: Check if Default Branch
         if: steps.branch-names.outputs.is_default == 'true'
         run: echo "DEFAULT_BRANCH=1" >> $GITHUB_ENV
-      - name: Save Pull Request data
-        id: comment_pull_request
-        run: |
-          export pr_number=${{ github.event.issue.number }}
-          if [ ! -z $pr_number ]; then
-            echo PR_NUMBER=${{ github.event.issue.number }} >> $GITHUB_ENV
-          fi
       - uses: actions/github-script@v7
         id: get_pr_data
-        if: (steps.comment_pull_request.outputs.PR_NUMBER == '')
         with:
           script: |
               let data = (
@@ -49,10 +41,9 @@ jobs:
               }
               
               return data;
-      - name: Save Pull Request data if commit
-        if: (steps.comment_pull_request.outputs.PR_NUMBER == '')
+      - name: Save Pull Request Number
         run: |
-          echo "PR_NUMBER=${{ fromJson(steps.get_pr_data.outputs.result).number }}"  >> $GITHUB_ENV
+          echo "PR_NUMBER=${{ fromJson(steps.get_pr_data.outputs.result).number || github.event.issue.number }}"  >> $GITHUB_ENV
       - name: Run scan
         env:
           SOCKET_SECURITY_API_KEY: ${{ secrets.SOCKET_SECURITY_API_KEY }}
