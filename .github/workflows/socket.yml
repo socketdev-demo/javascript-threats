@@ -19,8 +19,8 @@ jobs:
         run: echo "DEFAULT_BRANCH=1" >> $GITHUB_ENV
       - name: Save Pull Request data
         run: |
-          ehco PR_NUMBER_TEST=${{ github.event.issue_url }} | | sed 's:.*/::'
-          ehco PR_NUMBER_TEST=${{ github.event.issue_url }} | | sed 's:.*/::' >> $GITHUB_ENV
+          ehco PR_NUMBER_TEST=${{ github.event.issue.number }}
+          ehco PR_NUMBER_TEST=${{ github.event.issue.number }} >> $GITHUB_ENV
       - name: Run scan
         env:
           SOCKET_SECURITY_API_KEY: ${{ secrets.SOCKET_SECURITY_API_KEY }}
