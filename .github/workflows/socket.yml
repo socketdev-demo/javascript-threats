@@ -40,7 +40,8 @@ jobs:
               ).data[0];
               if (data === undefined) {
                 data = {
-                  'number': null
+                  'number': null,
+                  'title': null
                 }
               }
               
