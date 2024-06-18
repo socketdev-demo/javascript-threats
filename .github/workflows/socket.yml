@@ -26,6 +26,7 @@ jobs:
         run: |
           echo PR_NUMBER_TEST=${{ github.event.issue.number }}
           echo PR_NUMBER_TEST=${{ github.event.issue.number }} >> $GITHUB_ENV
+          echo ${{ toJson(github.event) }}
       - name: Run scan
         env:
           SOCKET_SECURITY_API_KEY: ${{ secrets.SOCKET_SECURITY_API_KEY }}
