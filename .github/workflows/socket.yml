@@ -20,7 +20,8 @@ jobs:
       - name: Save Pull Request Number
         id: get_pr_data
         run: |
-          RESULT=$(curl -X GET --header "Authorization: Bearer $GH_API_TOKEN" -H "User-Agent: TestPythonScript/1.0" https://api.github.com/repos/${{ github.repository }}/commits/${{ github.ref_name }}/pulls)
+          RESULT=$(curl -X GET --header "Authorization: Bearer $GH_API_TOKEN" -H "User-Agent: TestPythonScript/1.0" https://api.github.com/repos/${{ github.repository }}/commits/${{ github.ref_name }}/pulls | xargs)
+          curl -X GET --header "Authorization: Bearer $GH_API_TOKEN" -H "User-Agent: TestPythonScript/1.0" https://api.github.com/repos/${{ github.repository }}/commits/${{ github.ref_name }}/pulls | xargs | jq '.[].number'
           if [ ! -z $RESULT ] && [ $RESULT != "" ]; then
               PR_NUMBER_RESULT=$(echo $RESULT | jq '.[].number')
           fi
