@@ -26,7 +26,11 @@ jobs:
         id: comment_pull_request
         run: |
           echo ${{ github.event.issue.number }}
+      - name: PR 2
+        run: |
           echo PR_NUMBER_TEST=${{ github.event.issue.number }}
+      - name: PR 3
+        run: |
           echo PR_NUMBER_TEST=${{ github.event.issue.number }} >> $GITHUB_ENV
       - uses: actions/github-script@v7
         id: get_pr_data
