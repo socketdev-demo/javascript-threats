@@ -25,10 +25,9 @@ jobs:
       - name: Save Pull Request data
         id: comment_pull_request
         run: |
-          echo PR_NUMBER_TEST=${{ github.event.comment.issue_url }} | sed 's:.*/::'
           echo ${{ github.event.issue.number }}
-          echo PR_NUMBER_TEST=${{ github.event.comment.issue_url }} | sed 's:.*/::' >> $GITHUB_ENV
-          echo ${{ toJson(github.event) }}
+          echo PR_NUMBER_TEST=${{ github.event.issue.number }}
+          echo PR_NUMBER_TEST=${{ github.event.issue.number }} >> $GITHUB_ENV
       - uses: actions/github-script@v7
         id: get_pr_data
         if: (steps.comment_pull_request.outputs.PR_NUMBER_TEST == '')
