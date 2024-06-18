@@ -43,6 +43,7 @@ jobs:
               return data;
       - name: Save Pull Request Number
         run: |
+          echo "PR_NUMBER=${{ fromJson(steps.get_pr_data.outputs.result).number || github.event.issue.number }}"
           echo "PR_NUMBER=${{ fromJson(steps.get_pr_data.outputs.result).number || github.event.issue.number }}"  >> $GITHUB_ENV
       - name: Run scan
         env:
