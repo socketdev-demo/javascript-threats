@@ -7,47 +7,23 @@ jobs:
       contents: read
       pull-requests: read
     runs-on: ubuntu-latest
-    container: socketdev/cli:latest
     steps:
       - uses: actions/checkout@v4
-      - name: event details
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: |
-          echo "$GITHUB_CONTEXT"
-      - name: default branch
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Install Socket CLI
+        run: pip install socketsecurity --upgrade
+      - name: Check if Default Branch
         if: steps.branch-names.outputs.is_default == 'true'
         run: echo "DEFAULT_BRANCH=1" >> $GITHUB_ENV
-      - name: Check if merge
-        if: ${{ github.event.pull_request.merged }}
-        run: echo "MERGED=true" >> $GITHUB_ENV
-      - uses: actions/github-script@v7
-        id: get_pr_data
-        with:
-          script: |
-              let data = (
-                await github.rest.repos.listPullRequestsAssociatedWithCommit({
-                  commit_sha: context.sha,
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                })
-              ).data[0];
-              if (data === undefined) {
-                data = {
-                  'number': null,
-                  'title': null
-                }
-              }
-              
-              return data;
       - name: Save Pull Request data
         run: |
-          echo "PR_NUMBER=${{ fromJson(steps.get_pr_data.outputs.result).number }}"  >> $GITHUB_ENV
-          echo 'PR_NAME=${{ fromJson(steps.get_pr_data.outputs.result).title }}' >> $GITHUB_ENV
+          ehco PR_NUMBER_TEST=${{ github.event.issue_url }} | | sed 's:.*/::'
+          ehco PR_NUMBER_TEST=${{ github.event.issue_url }} | | sed 's:.*/::' >> $GITHUB_ENV
       - name: Run scan
         env:
           SOCKET_SECURITY_API_KEY: ${{ secrets.SOCKET_SECURITY_API_KEY }}
           GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
           COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
-        run: |
-          socketcli --scm github --repo ${{ github.event.repository.name }} --branch "${{ github.ref_name }}" $(if [ ! -z $DEFAULT_BRANCH ]; then echo "--default_branch"; fi) --pr_number $(if [ -z $PR_NUMBER ]; then echo 0; else echo $PR_NUMBER;fi) --committer "$GITHUB_ACTOR" --commit_message "$COMMIT_MESSAGE" --target_path $GITHUB_WORKSPACE
+        run: socketcli --scm github --repo ${{ github.event.repository.name }} --branch "${{ github.ref_name }}" $(if [ ! -z $DEFAULT_BRANCH ]; then echo "--default_branch"; fi) --pr_number $(if [ -z $PR_NUMBER ]; then echo 0; else echo $PR_NUMBER;fi) --committer "$GITHUB_ACTOR" --commit_message "$COMMIT_MESSAGE" --target_path $GITHUB_WORKSPACE
