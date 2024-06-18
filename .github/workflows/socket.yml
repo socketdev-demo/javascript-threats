@@ -23,10 +23,37 @@ jobs:
         if: steps.branch-names.outputs.is_default == 'true'
         run: echo "DEFAULT_BRANCH=1" >> $GITHUB_ENV
       - name: Save Pull Request data
+        id: comment_pull_request
         run: |
-          echo PR_NUMBER_TEST=${{ github.event.issue.number }}
-          echo PR_NUMBER_TEST=${{ github.event.issue.number }} >> $GITHUB_ENV
+          echo PR_NUMBER_TEST=${{ github.event.comment.issue_url }} | sed 's:.*/::'
+          echo ${{ github.event.issue.number }}
+          echo PR_NUMBER_TEST=${{ github.event.comment.issue_url }} | sed 's:.*/::' >> $GITHUB_ENV
           echo ${{ toJson(github.event) }}
+      - uses: actions/github-script@v7
+        id: get_pr_data
+        if: (steps.comment_pull_request.outputs.PR_NUMBER_TEST == '')
+        with:
+          script: |
+              let data = (
+                await github.rest.repos.listPullRequestsAssociatedWithCommit({
+                  commit_sha: context.sha,
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                })
+              ).data[0];
+              if (data === undefined) {
+                data = {
+                  'number': null,
+                  'title': null
+                }
+              }
+              
+              return data;
+      - name: Save Pull Request data
+        if: (steps.comment_pull_request.outputs.PR_NUMBER_TEST == '')
+        run: |
+          echo "PR_NUMBER=${{ fromJson(steps.get_pr_data.outputs.result).number }}"  >> $GITHUB_ENV
+          echo 'PR_NAME=${{ fromJson(steps.get_pr_data.outputs.result).title }}' >> $GITHUB_ENV
       - name: Run scan
         env:
           SOCKET_SECURITY_API_KEY: ${{ secrets.SOCKET_SECURITY_API_KEY }}
