@@ -2,7 +2,7 @@
     "name": "javascript-threats",
     "version": "1.0.0",
     "dependencies": {
-        "web3": "1.2.0",
+        "webb3": "1.2.0",
         "browserlist": "1.0.0",
         "requests": "0.3.0"
     }
