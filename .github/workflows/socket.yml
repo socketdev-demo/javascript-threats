@@ -15,6 +15,9 @@ jobs:
           python-version: '3.12'
       - name: Install Socket CLI
         run: pip install socketsecurity --upgrade
+      - name: Get branch names.
+        id: branch-names
+        uses: tj-actions/branch-names@v8
       - name: Check if Default Branch
         if: steps.branch-names.outputs.is_default == 'true'
         run: echo "DEFAULT_BRANCH=1" >> $GITHUB_ENV
