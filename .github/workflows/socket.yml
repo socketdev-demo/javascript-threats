@@ -1,6 +1,6 @@
 name: socket-security-workflow
 run-name: Socket Security Github Action
-on: [push, issue_comment]
+on: [push, issue_comment, pull_request]
 jobs:
   socket-security:
     permissions:
