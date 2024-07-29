@@ -13,8 +13,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: get env vars
-        run: cat $GITHUB_ENV
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
       - name: Install Socket CLI
         run: pip install socketsecurity --upgrade
       - name: Get branch names.
