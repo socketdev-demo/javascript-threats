@@ -20,7 +20,7 @@ jobs:
       - name: Get PR State
         if: github.event_name == 'pull_request'
         run: |
-          echo ${{ github.event.action }} >> $GITHUB_ENV
+          echo "EVENT_ACTION=${{ github.event.action }}" >> $GITHUB_ENV
           cat $GITHUB_ENV
       - name: Install Socket CLI
         run: pip install socketsecurity --upgrade
