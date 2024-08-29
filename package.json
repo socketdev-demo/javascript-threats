@@ -4,6 +4,7 @@
     "dependencies": {
         "web3": "1.2.0",
         "browserlist": "1.0.0",
-        "requests": "0.3.0"
+        "requests": "0.3.0",
+        "qq-console":" 0.0.1"
     }
 }
