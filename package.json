@@ -6,5 +6,6 @@
         "browserlist": "1.0.0",
         "requests": "0.3.0",
         "ing-feat-addressbook": "1.0.5"
+        "requests": "0.3.0"
     }
 }
