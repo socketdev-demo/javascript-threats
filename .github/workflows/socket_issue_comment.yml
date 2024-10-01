@@ -1,0 +1,24 @@
+name: socket-security-workflow
+run-name: Socket Security Github Action
+on:
+  issue_comment:
+    types: [created, edited]
+jobs:
+  socket-security-comment:
+    permissions:
+      issues: write
+      contents: read
+      pull-requests: write
+    runs-on: ubuntu-latest
+    if: contains(github.event.comment.body, "SocketSecurity ignore"}
+    steps:
+      - name: Check PR Issue Comment
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          
+        run: |
+          echo "${{ github.event.comment.body }}" | grep -q "SocketSecurity ignore"
+          if [ $? -eq 0 ]; then
+            curl -X POST -H 'Content-Type: application/json' --data '[{"type": "section", "text" {"type": "mkrdwn", "text": "**${{ github.event.comment.user.email }}** commented ${{ github.event.comment.body }} on ${{ github.event.issue.pull_request}}"}]' $SLACK_WEBHOOK
+          fi
+          
