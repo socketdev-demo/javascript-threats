@@ -10,16 +10,19 @@ jobs:
       contents: read
       pull-requests: write
     runs-on: ubuntu-latest
-    if: ${{ github.event.issue.pull_request}}
+    if: ${{ github.event.issue.pull_request }}
     steps:
       - name: Check PR Issue Comment
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           COMMENT_BODY: ${{ github.event.comment.body }}
+          COMMENT_USER: ${{ github.event.comment.user.login }}
+          PR_URL: ${{ github.event.issue.pull_request.url }}
         run: |
           COMMENT_STR=$(echo "$COMMENT_BODY" | head -n 1)
-          echo "${{ github.event.comment.body }}" | head -n 1 | grep -iq "SocketSecurity ignore"
+          echo "$COMMENT_BODY" | head -n 1 | grep -iq "SocketSecurity ignore"
           if [ $? -eq 0 ]; then
-            curl -X POST -H 'Content-type: application/json' -d '{"text": "*${{ github.event.comment.user.login }}* commented `'"$COMMENT_STR"'` on ${{ github.event.issue.pull_request.url }}"}' $SLACK_WEBHOOK
+            # Send payload to Slack webhook
+            curl -X POST -H 'Content-type: application/json' -d "$(jq -n --arg user "$COMMENT_USER" --arg comment "$COMMENT_STR" --arg pr_url "$PR_URL" \
+            '{"text": "*\($user)* commented `\($comment)` on <\($pr_url)|GitHub Pull Request>"}')" $SLACK_WEBHOOK
           fi
-          
