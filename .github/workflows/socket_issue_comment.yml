@@ -32,7 +32,7 @@ jobs:
                     }
                 ]
             }
-            EOF
+          EOF
             curl -X POST -H 'Content-type: application/json' -d @slack_webhook.json $SLACK_WEBHOOK
           fi
           
