@@ -19,9 +19,9 @@ jobs:
           COMMENT_USER: ${{ github.event.comment.user.login }}
           PR_URL: ${{ github.event.issue.pull_request.url }}
         run: |
-          # Extract the first line of the comment and strip newlines
-          COMMENT_STR=$(echo "$COMMENT_BODY" | head -n 1 | tr -d '\n')
-          
+          # Extract the first line of the comment and strip newlines and carriage returns
+          COMMENT_STR=$(echo "$COMMENT_BODY" | head -n 1 | tr -d '\n\r')
+
           # Extract the PR number from the PR URL (assuming the format ends with the number)
           PR_NUMBER=$(basename "$PR_URL")
 
