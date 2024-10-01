@@ -20,19 +20,6 @@ jobs:
           COMMENT_STR=$(echo "$COMMENT_BODY" | head -n 1)
           echo "${{ github.event.comment.body }}" | head -n 1 | grep -iq "SocketSecurity ignore"
           if [ $? -eq 0 ]; then
-            tee slack_webhook.json <<EOF
-            {
-                "blocks": [
-                    {
-                        "type": "section",
-                        "text": {
-                            "type": "mrkdwn",
-                            "text": "*${{ github.event.comment.user.login }}* commented \`$COMMENT_STR\` on ${{ github.event.issue.pull_request.url }}"
-                        }
-                    }
-                ]
-            }
-          EOF
-            curl -X POST -H 'Content-type: application/json' -d @slack_webhook.json $SLACK_WEBHOOK
+            curl -X POST -H 'Content-type: application/json' -d '"text": "*${{ github.event.comment.user.login }}* commented `'$COMMENT_STR'` on ${{ github.event.issue.pull_request.url }}"' $SLACK_WEBHOOK
           fi
           
