@@ -1,4 +1,4 @@
-name: socket-security-workflow
+name: socket-security-issue-comment
 run-name: Socket Security Github Action
 on:
   issue_comment:
