@@ -18,19 +18,18 @@ jobs:
           COMMENT_BODY: ${{ github.event.comment.body }}
         run: |
           COMMENT_STR=$(echo "$COMMENT_BODY" | head -n 1)
-          MSG_BODY="*${{ github.event.comment.user.login }}* commented \`$COMMENT_STR\` on ${{ github.event.issue.pull_request.url }}"
           echo "${{ github.event.comment.body }}" | head -n 1 | grep -iq "SocketSecurity ignore"
           if [ $? -eq 0 ]; then
-            curl -X POST -H 'Content-type: application/json' --data '{
-                "blocks": [
+            curl -X POST -H 'Content-type: application/json' --data "{
+                \"blocks\": [
                     {
-                        "type": "section",
-                        "text": {
-                            "type": "mrkdwn",
-                            "text": "'$MSG_BODY'"
+                        \"type\": \"section\",
+                        \"text\": {
+                            \"type\": \"mrkdwn\",
+                            \"text\": \"*${{ github.event.comment.user.login }}* commented \`$COMMENT_STR\` on ${{ github.event.issue.pull_request.url }}\"
                         }
                     }
                 ]
-            }' $SLACK_WEBHOOK
+            }" $SLACK_WEBHOOK
           fi
           
