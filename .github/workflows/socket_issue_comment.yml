@@ -10,7 +10,7 @@ jobs:
       contents: read
       pull-requests: write
     runs-on: ubuntu-latest
-    if: contains(github.event.comment.body, "SocketSecurity ignore"}
+    if: ${{ github.event.issue.pull_request}}
     steps:
       - name: Check PR Issue Comment
         env:
