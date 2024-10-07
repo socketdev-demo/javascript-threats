@@ -60,9 +60,10 @@ jobs:
           GH_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
         run: |
+          CHANGED_FILES=$(${{ steps.changed-files.outputs.changed_files }} | tr " " "\n")
           FILES=""
           while IFS= read -r line; do
             FILES="$FILES\"$line\","
-          done <<< "${{ steps.changed-files.outputs.changed_files }}"
-          FILES=$(echo $FILES | tr " " "\n" | sed 's/,*$//')
+          done <<< "$CHANGED_FILES"
+          FILES=$(echo $FILES | sed 's/,*$//')
           socketcli --files "[$FILES]" --scm github --repo ${{ github.event.repository.name }} --branch "${{ github.ref_name }}" $(if [ ! -z $DEFAULT_BRANCH ]; then echo "--default_branch"; fi) --pr_number $(if [ -z $PR_NUMBER ]; then echo 0; else echo $PR_NUMBER;fi) --committer "$GITHUB_ACTOR" --commit_message "$COMMIT_MESSAGE" --target_path $GITHUB_WORKSPACE
