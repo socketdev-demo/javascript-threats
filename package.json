@@ -1,7 +1,12 @@
 {
-    "name": "javascript-threats",
+    "name": "threat-feed",
     "version": "1.0.0",
     "dependencies": {
-      "web3": "^1.2.0"
+        "fluid-tooltip": "^0.0.1-security",
+        "%40contas/mongo": "^1.0.1",
+        "ckeditor5-dzb": "^1.0.1",
+        "common-page-utilitiessubbu": "^93.0.176",
+        "%40marthemis/rc": "^1.1.0-dev.89",
+        "azure-communication-identity": "^0.0.1-security"
     }
 }
