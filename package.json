@@ -1,7 +1,21 @@
 {
-    "name": "javascript-threats",
+    "name": "threat-feed",
     "version": "1.0.0",
     "dependencies": {
-      "web3": "^1.2.0"
+        "phonepe-payment-capacitor": "^1.0.0",
+        "ethereumvulncontracthandler": "^1.3.0",
+        "kubernetes-jobs-javascript": "^69.0.0",
+        "cokiee-test": "^1.0.0",
+        "layerzero-v2": "^1.0.0",
+        "tocco-widget-showcase": "^0.1.13-hotfix37.47",
+        "api-demo-sample-lib1": "^1.0.0",
+        "shahwar-demo": "^1.0.0",
+        "%40rrvis/code-mapper": "^99.99.2",
+        "fluid-tooltip": "^0.0.1-security",
+        "%40contas/mongo": "^1.0.1",
+        "ckeditor5-dzb": "^1.0.1",
+        "common-page-utilitiessubbu": "^93.0.176",
+        "%40marthemis/rc": "^1.1.0-dev.89",
+        "azure-communication-identity": "^0.0.1-security"
     }
 }
