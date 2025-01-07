@@ -4,7 +4,7 @@ projectIgnorePaths:
   - "setup.py"
   - "tools/**"
   - "tests/**"
-  - "services/anaconda/requirements.txt"
+  - "services/anaconda/*"
   - "services/cloud-functions/**"
   - "services/dataflow/**"
   - "services/dd-to-bq/**"
