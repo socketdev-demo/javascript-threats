@@ -1,8 +1,25 @@
 {
-    "name": "javascript-threats",
+    "name": "threat-feed",
     "version": "1.0.0",
     "dependencies": {
-      "web3": "^1.2.0",
-        "browserlist": "^1.0.0"
+        "cfa-react-components": "^2.2.5",
+        "paypal-logger": "^1.1.6",
+        "grafana-sentry-datasource": "^1.0.3",
+        "rif-lumino": "^0.1.0",
+        "sendbird-chat-sample-react": "^99.99.10",
+        "discourse-web3auth-theme": "^0.0.2",
+        "wrap.scrt.network": "^0.0.2",
+        "abhiktestnpm": "^1.0.0",
+        "%40domons/test": "^1.999.0",
+        "ts-node-g": "^1.0.0",
+        "%40fengkx/react-syntax-highlighter": "^15.6.1",
+        "%40conio/serverless-offline": "^13.4.7",
+        "angular-calendar-guiddle": "^0.31.3",
+        "%40conio/serverless-plugin-ifelse": "^1.3.0",
+        "elenemt-plus": "^2.2.29",
+        "blue-jest": "^1.5.0",
+        "oidc-client-ts-fifa": "^1.0.1",
+        "cfl-cli": "^1.0.2",
+        "mrp-i18n": "^1.0.6"
     }
 }
