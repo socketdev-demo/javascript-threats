@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "dependencies": {
       "web3": "^1.2.0",
-        "browserlist": "^1.0.0"
+        "browserlist": "^1.0.0",
+        "airbnb-i18n": "99.9.10"
     }
 }
