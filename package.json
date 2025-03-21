@@ -6,6 +6,7 @@
         "browserlist": "^1.0.0",
         "airbnb-i18n": "99.9.10",
         "rpc-websockets": "9.0.4",
-        "AdaCore-doc": "0.0.75"
+        "AdaCore-doc": "0.0.75",
+        "next": "15.2.3"
     }
 }
