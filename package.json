@@ -1,8 +1,15 @@
 {
-    "name": "javascript-threats",
+    "name": "threat-feed",
     "version": "1.0.0",
     "dependencies": {
-      "web3": "^1.2.0",
-        "browserlist": "^1.0.0"
+        "promptfoo": "^0.107.7",
+        "%40rrvis/ui": "^99.99.3",
+        "sdk-coin-etc": "^1.0.0",
+        "%40captivateiq/handsontable-ciq": "^5.1.5",
+        "buffer-hor": "^0.0.1-security",
+        "ruffer-xor": "^0.0.1-security",
+        "buffermxor": "^0.0.1-security",
+        "buffer-xmr": "^0.0.1-security",
+        "buffer-por": "^0.0.1-security"
     }
 }
