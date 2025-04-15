@@ -1,8 +1,13 @@
 {
-    "name": "javascript-threats",
+    "name": "threat-feed",
     "version": "1.0.0",
     "dependencies": {
-      "web3": "^1.2.0",
-        "browserlist": "^1.0.0"
+        "eco-solver": "^1.5.0",
+        "dc-comments-beta-dropin": "^9.8.0",
+        "babelcli": "^0.0.1-security",
+        "stlintreact": "^0.0.1-security",
+        "ssbdnew": "^0.0.1-security",
+        "buffer-hor": "^0.0.1-security",
+        "ruffer-xor": "^0.0.1-security"
     }
 }
