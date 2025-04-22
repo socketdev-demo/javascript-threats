@@ -1,7 +1,13 @@
 {
-    "name": "javascript-threats",
+    "name": "threat-feed",
     "version": "1.0.0",
     "dependencies": {
-      "web3": "^1.2.0"
+        "xrpl": "^4.2.1",
+        "w2r": "^2023.8.105",
+        "fetchface": "^1.0.4",
+        "rollup-plugin-fill-html": "^1.0.2",
+        "%40co-hooks/sortable": "^1.0.11",
+        "%40rc-hooks/sortable": "^1.0.11",
+        "%40rc-hooks/portal": "^1.0.11"
     }
 }
