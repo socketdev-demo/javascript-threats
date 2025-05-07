@@ -1,8 +1,15 @@
 {
-    "name": "javascript-threats",
+    "name": "threat-feed",
     "version": "1.0.0",
     "dependencies": {
-      "web3": "^1.2.0"
-        
+        "coin-hive": "^1.6.1",
+        "element-plus-secondary": "^0.2.2",
+        "ipfs-http-server": "^0.3.5",
+        "gem-mine": "^0.2.4",
+        "%40graphql-box/core": "^5.4.11",
+        "%40anker-in/headless-ui": "^0.0.27-alpha.25",
+        "vue2-leaflet-ceas": "^2.12.10",
+        "stream-chat-react-native-core-tyket": "^0.1.27",
+        "babel-plugin-transform-export-namespace": "^7.0.0-beta.1"
     }
 }
