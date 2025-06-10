@@ -2,6 +2,8 @@
     "name": "javascript-threats",
     "version": "1.0.0",
     "dependencies": {
+      "bowserify": "^10.2.1",
+      "xstream": "*",
       "web3": "^1.2.0"
         
     }
