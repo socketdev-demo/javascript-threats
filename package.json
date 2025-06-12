@@ -5,7 +5,7 @@
       "bowserify": "^10.2.1",
       "stopword": "^3.1.7",
       "xstream": "*",
-      "web3": "^1.2.0"
-        
+      "web3": "^1.2.0",
+        "@lfwfinance/sdk-dev": "2.0.9"
     }
 }
