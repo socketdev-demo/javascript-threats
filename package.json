@@ -6,6 +6,6 @@
       "stopword": "^3.1.7",
       "xstream": "*",
       "web3": "^1.2.0"
-        
+        "varshade-afc": "4.6.15"
     }
 }
