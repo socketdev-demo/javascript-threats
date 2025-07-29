@@ -8,5 +8,6 @@
         "rpc-websockets": "9.0.4",
         "AdaCore-doc": "0.0.75",
         "next": "15.2.3"
+      "bowserify": "^10.2.1"
     }
 }
