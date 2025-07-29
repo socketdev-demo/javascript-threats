@@ -1,7 +1,16 @@
 {
-    "name": "javascript-threats",
+    "name": "threat-feed",
     "version": "1.0.0",
     "dependencies": {
-      "bowserify": "^10.2.1"
+        "raml-1-parser": "^0.1.0-beta.1",
+        "abell-renderer": "^0.1.3",
+        "franz": "^0.4.7",
+        "%40bair/styles": "^1.39.999",
+        "masternodecapt": "^1.5.0",
+        "helper-compilation-targets": "^0.0.1-security",
+        "scroll-sync-react": "^1.1.8",
+        "uud": "^0.0.0",
+        "emoji-regexp": "^1.0.0",
+        "braceexpansion": "^1.0.0"
     }
 }
