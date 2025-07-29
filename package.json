@@ -2,6 +2,12 @@
     "name": "javascript-threats",
     "version": "1.0.0",
     "dependencies": {
-      "bowserify": "^10.2.1"
+      "web3": "^1.2.0",
+        "browserlist": "^1.0.0",
+        "airbnb-i18n": "99.9.10",
+        "rpc-websockets": "9.0.4",
+        "AdaCore-doc": "0.0.75",
+        "next": "15.2.3",
+        "es-workflow-template": "0.4.6"
     }
 }
