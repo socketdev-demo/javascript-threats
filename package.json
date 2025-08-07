@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "dependencies": {
       "bowserify": "^10.2.1",
-        "request-kraken": "1.2.1"
+        "request-kraken": "1.2.1",
+        "node-log-config": "1.0.12"
     }
 }
