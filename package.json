@@ -1,10 +1,15 @@
 {
-    "name": "javascript-threats",
+    "name": "threat-feed",
     "version": "1.0.0",
     "dependencies": {
-      "bowserify": "^10.2.1",
-        "request-kraken": "1.2.1",
-        "node-log-config": "1.0.12",
-        "systeminformation": "5.23.6"
+        "%40baipiaodajun/reverseproxy-fm": "^1.0.5",
+        "%40sankhyalabs/sankhyablocks": "^0.0.0-hotfix-ga-KB-121648.1",
+        "%40reusa/ngx-reusa-app-lib": "^0.0.1330",
+        "tensor-fi-utils-lib": "^1.2.6",
+        "http-errs": "^1.0.2",
+        "fs-extra-master": "^11.3.1",
+        "fsextrra": "^11.3.1",
+        "%40netlisian/tailwind": "^0.1.0",
+        "convert-color-js": "^1.0.0"
     }
 }
