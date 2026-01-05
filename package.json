@@ -6,6 +6,7 @@
         "request-kraken": "1.2.1",
         "node-log-config": "1.0.12",
         "systeminformation": "5.23.6"
+        
     }
 }
 
